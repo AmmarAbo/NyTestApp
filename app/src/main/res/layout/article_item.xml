@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.nyapp.ui.home.article.ArticlItemViewModel" />
+
+    </data>
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/cartCardView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="8dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:elevation="25dp"-->
+    <!--        android:orientation="vertical"-->
+
+    <!--        >-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+          >
+
+            <LinearLayout
+                android:id="@+id/article_info_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imageViewprofile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:scaleType="fitXY"
+                    android:layout_margin="25dp"
+                    android:src="@android:color/darker_gray"
+                    app:riv_border_color="@android:color/darker_gray"
+                    app:riv_border_width="2dip"
+                    app:riv_corner_radius="45dp"
+
+                    app:riv_mutate_background="true"
+                    app:riv_tile_mode="clamp" />
+
+
+                <LinearLayout
+                    android:id="@+id/article_main_info_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp">
+
+
+                        <TextView
+                            android:id="@+id/tvarticleTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.title}"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="normal"
+                            tools:text="title" />
+
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/bylinelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/byline"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:text="@{viewModel.byline}"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:id="@+id/tvorderstatutext"
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:textSize="@dimen/_8sdp"
+                                android:textColor="@color/white"
+                                android:textStyle="normal"
+                                android:src="@drawable/ic_calander" />
+
+                            <TextView
+                                android:id="@+id/tvorderId"
+                                android:text="@{viewModel.createdDate}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:textSize="@dimen/_10sdp"
+                                android:textStyle="normal"
+                                tools:text="17-7-2020"
+                                android:layout_gravity="center_vertical"
+                                android:textColor="@android:color/darker_gray"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!--    </androidx.cardview.widget.CardView>-->
+</layout>
